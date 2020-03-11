@@ -154,10 +154,28 @@ console.log( addNums() ); // no arugments! but our default values kick in!
 Rest parameter...
 */
 
-findHighNum = (...args ) => {   // ...arg will capture any number of arguments taht we pass!
+displayArray = (...args ) => {   // ...arg will capture any number of arguments that we pass!
     console.log ( args ); // it can be called by the name we had inbetween our parenthesis.
-    return args;
+    return args; // in console write it as so " findHighNum(10,20,13); "
 }
+
+
+findHighNum = (...args ) => {   // ...arg will capture any number of arguments that we pass!
+    console.log ( args ); // it can be called by the name we had inbetween our parenthesis.
+    return args; // in console write it as so " findHighNum(10,20,13); "
+}
+
 
 addAllNum = (...nums ) => nums.reduce ((a , v ) => a + v );
 console.log (addAllNum (64 , 6 , 10 ) );
+
+
+/**
+ * Template Literals
+ */
+
+const helloVar = 'Hello, world';
+const sampleName = 'Samuel';
+
+const myNewString= `Hey there, my name is ${sampleName}; i\'d like to give you a big \"${helloVar}"!!`; //
+console.log(myNewString);
