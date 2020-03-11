@@ -253,7 +253,8 @@ class Movie{
         Genre: ${this.genre}
         Year: ${this.year}
         Rating: ${this.rating}
-        `
+        `;
+        return info;
     }
 }
 
@@ -265,4 +266,27 @@ class Movie{
  console.log(tron);
  console.log(dragonheart);
  console.log(coolRunnings);
- console.log(toyStory3);
+ console.log(toyStory3);    // displays info in the console it will display it
+
+ // to call the method use tron.showPoster(tron)
+
+//  "
+//         Movie Info
+//         -=-=-=-=-=-
+//         Name: Disney's TRON
+//         Genre: Adventure
+//         Year: 1982
+//         Rating: The 2010 remake was better
+//         "
+
+get name() { // how we store a new property value. a SETTER
+    return this.name;
+}
+
+set name( newName ) {
+    if (typeof name === 'string'){
+        this.name = newName;
+    } else {
+        this.name = newName.toString();
+    } 
+}
