@@ -245,6 +245,23 @@ class Movie{
         this.year = year;
         this.rating = rating;
     }
+
+    get name() { // how we store a new property value. a SETTER
+        return this.name;
+    }
+    
+    set newName ( name ) {
+        if (typeof name === 'string'){
+            this.name = name;
+        } else {
+            this.name = name.toString();
+        } 
+    }
+
+    set setYear ( year ){
+        this.year = Number( year );
+    }
+
     showPoster(){       // method name
         const info = `
         Movie Info
@@ -279,14 +296,3 @@ class Movie{
 //         Rating: The 2010 remake was better
 //         "
 
-get name() { // how we store a new property value. a SETTER
-    return this.name;
-}
-
-set name( newName ) {
-    if (typeof name === 'string'){
-        this.name = newName;
-    } else {
-        this.name = newName.toString();
-    } 
-}
