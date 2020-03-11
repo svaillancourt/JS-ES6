@@ -1,3 +1,5 @@
+// import "./movies.class.js"; // Bring in our file.
+
 /**
  * Let's see what some of our newer array methods are...
  */
@@ -186,5 +188,81 @@ console.log(myNewString);
 
 const newArray = ['hello', ',', ' ', 'world','!'];
 console.log( newArray );
-console.log( ...newArray ); // brought the values in the arrary together
+console.log( ...newArray ); // spreads the values in the arrary 
 
+const aBunchOfNums = [5,10,36,58];
+console.log( addAllNum( 5,10,36,58 ) );
+console.log( addAllNum(...aBunchOfNums) ); // spreads the values in the arrary 
+
+/**
+ * String methods!
+ */
+
+/**
+ * .search() method
+ * 
+ * REgex learning tool: https://regexone.com/
+ */
+
+ const myTestString = 'Greetings, Programs!'
+ console.log( myTestString.search(/TING/i)); // Regex match. i is for case-Insensitive. Returns the SUBSTRING POSITION. TING is 4
+
+ /**
+ * .replace methods!
+ */
+
+ const myReplacedString = myTestString.replace ( /Programs/, 'World');
+ console.log( myReplacedString );
+
+/**
+ * Block!
+ */
+
+ // unnamed block.. we can use this to caontain otherwise-global const and let variables.
+ {
+     const myBlocNestedVar = 38;
+ }
+
+ // console.log ( myBlocNestedVar );
+
+ // we CAN name blacks if we want. 
+ myOrganizeName: { // this could be named anything...
+    // we can organize some code in here, and control scopre of let/const.
+    let myBlocNestedVar = 55; // we used the same name as in our unnamed block?!?! that's okay, it was born in a differently scoped block!
+    myBlocNestedVar++;
+    console.log( myBlocNestedVar );
+ }
+
+ /**
+ * Classes
+ * **** CHECk OUR IMPORT, THAT's HOW WE're ACCCESING THIS!
+ */
+
+class Movie{
+    constructor( name, genre, year, rating) {
+        this.name = name;
+        this.genre = genre;
+        this.year = year;
+        this.rating = rating;
+    }
+    showPoster(){       // method name
+        const info = `
+        Movie Info
+        -=-=-=-=-=-
+        Name: ${this.name}
+        Genre: ${this.genre}
+        Year: ${this.year}
+        Rating: ${this.rating}
+        `
+    }
+}
+
+ const tron = new Movie ('Disney\'s TRON', 'Adventure' , 1982, 'The 2010 remake was better');
+ const dragonheart = new Movie ('Dragon heart', 'Medieval' , 1982, 'Never seen it');
+ const coolRunnings = new Movie ('Cool Runnings', 'Drama' , 1995, 'Kiss the egg! 10/10');
+ const toyStory3 = new Movie ('Toy Story 3', 'Animated' , 2016, 'Brought tears to my eyes');
+
+ console.log(tron);
+ console.log(dragonheart);
+ console.log(coolRunnings);
+ console.log(toyStory3);
