@@ -174,8 +174,17 @@ console.log (addAllNum (64 , 6 , 10 ) );
  * Template Literals
  */
 
-const helloVar = 'Hello, world';
+const helloVar = 'e-hug, ⊂(◉‿◉)つ ';
 const sampleName = 'Samuel';
 
 const myNewString= `Hey there, my name is ${sampleName}; i\'d like to give you a big \"${helloVar}"!!`; //
 console.log(myNewString);
+
+/**
+ * Spread Operator
+ */
+
+const newArray = ['hello', ',', ' ', 'world','!'];
+console.log( newArray );
+console.log( ...newArray ); // brought the values in the arrary together
+
